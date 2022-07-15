@@ -1,0 +1,1 @@
+Program analizujący ceny kart graficznych w polskich elektromarketach, allegro oraz olx.
