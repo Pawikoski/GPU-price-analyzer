@@ -17,6 +17,8 @@ class Store:
         self.model = model.upper()
 
     def morele(self):
+        formatted = []
+
         def _format(products):
             for product in products:
                 name = product['data-product-name']
@@ -28,9 +30,17 @@ class Store:
                 else:
                     price = float(product['data-product-price'])
                     available = True
-                new_url = "https://morele.net" + product.find("a", {"class": "productLink"})['href']
+                product_url = "https://morele.net" + product.find("a", {"class": "productLink"})['href']
                 brand = product['data-product-brand']
-                print(self.model, price, brand, memory_gb, lhr)
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
 
         base_url = self.url
         headers = self.headers
@@ -55,6 +65,8 @@ class Store:
                 soup = BeautifulSoup(response.text, 'lxml')
 
                 _format(soup.find_all("div", {"class": "cat-product"}))
+
+        return formatted
 
     def run(self):
         match self.store:
