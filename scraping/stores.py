@@ -54,7 +54,8 @@ class Store:
             for product in products:
                 name = product['data-product-name']
                 lhr = "lhr" in name.lower()
-                memory_gb = int([feature for feature in product.find_all("div", {"class": "cat-product-feature"}) if "ilość pamięci ram" in feature.text.lower()][0]['title'].lower().replace("gb", ""))
+                memory_gb = int([feature for feature in product.find_all("div", {"class": "cat-product-feature"}) if
+                                 "ilość pamięci ram" in feature.text.lower()][0]['title'].lower().replace("gb", ""))
                 if not product.find("a", href=re.compile(fr"/basket/add/{product['data-product-id']}")):
                     price = None
                     available = False
@@ -110,7 +111,9 @@ class Store:
                 if len(re.findall(r"\d{1,2}GB", name)) > 0:
                     memory_gb = int(re.findall(r"\d{1,2}GB", name)[0].lower().replace("gb", ""))
                 else:
-                    memory_gb = int(int(product.find_element(By.XPATH, '//span[contains(text(), "Ilość pamięci RAM [MB]")]').find_element(By.XPATH, '../..').text.split(":")[1]) / 1024)
+                    memory_gb = int(int(product.find_element(By.XPATH,
+                                                             '//span[contains(text(), "Ilość pamięci RAM [MB]")]').find_element(
+                        By.XPATH, '../..').text.split(":")[1]) / 1024)
 
                 try:
                     product.find_element(By.XPATH, '//button[contains(@class, "add-to-cart")]')
@@ -167,12 +170,94 @@ class Store:
 
         return formatted
 
+    def komputronik(self, attempt: int = 0):
+        formatted = []
+
+        def _format(products: list):
+            for product in products:
+                name_and_url = product.find("div", {"class": "pe2-head"}).a
+                name = name_and_url.text.strip()
+                try:
+                    product_url = name_and_url['href']
+                except KeyError:
+                    continue
+                lhr = "lhr" in name.lower()
+                regex1 = re.findall(r"\d{1,2}\s*GB", name, flags=re.IGNORECASE)
+                regex2 = re.findall(r"\d{1,2}G", name, flags=re.IGNORECASE)
+                if len(regex1) > 0:
+                    memory_gb = int(regex1[0].lower().replace("gb", ""))
+                elif len(regex2) > 0:
+                    memory_gb = int(regex2[0].lower().replace("g", ""))
+                else:
+                    try:
+                        memory_gb = int(product.find(
+                            "span", {"class": "pe2-features__value"}, text=re.compile(r"\d{1,2}\s*gb", re.IGNORECASE)
+                        ).text.lower().replace("gb", ""))
+                    except TypeError:
+                        memory_gb = int(int(product.find(
+                            "span", {"class": "pe2-features__value"}, text=re.compile(r"\d{4,6}\s*mb", re.IGNORECASE)
+                        ).text.lower().replace("mb", "")) / 1024)
+                if product.find("ktr-product-availability")['is-buyable'] == "0":
+                    price = None
+                    available = False
+                else:
+                    available = True
+                    # TODO: Catch exceptions for price:
+                    price = float(str(product.find("span", {"class": "price"}).text).encode("ascii", "ignore").decode()
+                                  .strip().replace(" ", "").replace("zł", "").replace("z", "").replace(",", "."))
+
+                brand = brand_detector(name)
+
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+
+        response = requests.get(self.url, headers=self.headers)
+        if response.status_code != 200:
+            time.sleep(20 + attempt * 10)
+            return self.komputronik(attempt=attempt + 1)
+        soup = BeautifulSoup(response.text, 'lxml')
+
+        try:
+            pages_raw = soup.find_all("a", href=re.compile(r'\?p=\d{1,3}'))
+            if len(pages_raw) == 2:
+                pages = 2
+            else:
+                pages = int(pages_raw[-2].text)
+        except (ValueError, AttributeError, TypeError, IndexError):
+            pages = 1
+
+        _format(soup.findAll("li", {"class": "product-entry2"}))
+
+        if pages > 1:
+            for page in range(2, pages + 1):
+                time.sleep(random.uniform(10.0, 30.0))
+                response = requests.get(self.url, params={"p": page}, headers=self.headers)
+                if response.status_code != 200:
+                    time.sleep(20)
+                    response = requests.get(self.url, params={"p": page}, headers=self.headers)
+
+                soup = BeautifulSoup(
+                    response.text, 'lxml'
+                )
+                _format(soup.findAll("li", {"class": "product-entry2"}))
+
+        return formatted
+
     def run(self):
         match self.store:
             # case "morele":
             #     self.morele()
-            case "mediaexpert":
-                self.mediaexpert()
+            # case "mediaexpert":
+            #     self.mediaexpert()
+            case "komputronik":
+                self.komputronik()
 
 
 if __name__ == "__main__":
