@@ -6,6 +6,6 @@ def brand_detector(name: str) -> str | bool:
     name = name.lower()
     for brand in BRANDS:
         if brand in name:
-            return brand
+            return brand.title()
 
     return False
