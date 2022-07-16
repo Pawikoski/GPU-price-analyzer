@@ -250,14 +250,78 @@ class Store:
 
         return formatted
 
+    def sferis(self):
+        formatted = []
+
+        def _format(products: list):
+            for product in products:
+                name = product.find("p", {"class": "title"}).text
+                if not product.find("button", {"title": "Dodaj do koszyka"}):
+                    available = False
+                    price = None
+                else:
+                    available = True
+                    price = float(product.find("span", {"class": "price"}).text.replace(",", ".").replace("zł", "").replace(" ", ""))
+                product_url = "https://sferis.pl" + product.a['href']
+                lhr = "lhr" in name.lower()
+                try:
+                    memory_gb = int(re.findall(r"\d{1,2}\s*gb", name.lower())[0].replace("gb", ""))
+                except IndexError:
+                    try:
+                        memory_gb = int(re.findall(r"\d{1,2}g", name.lower())[0].replace("g", ""))
+                    except IndexError:
+                        memory_gb = None
+                brand = brand_detector(name)
+
+                print({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+
+        response = requests.get(self.url, headers=self.headers, params={"l": 150})
+        soup = BeautifulSoup(response.text, 'lxml')
+
+        try:
+            pages = int(soup.find("span", {"data-pages": True})['data-pages'])
+        except (ValueError, AttributeError, TypeError):
+            pages = 1
+
+        _format(soup.find("article", {"id": "jsProductListingItems"}).find_all("div", {"class": "jsSwipe"}))
+
+        if pages > 1:
+            for page in range(2, pages + 1):
+                time.sleep(random.uniform(0.2, 6.0))
+                soup = BeautifulSoup(
+                    requests.get(self.url, params={"l": 150, "p": page}, headers=self.headers).text, 'lxml'
+                )
+                _format(soup.find("article", {"id": "jsProductListingItems"}).find_all("div", {"class": "jsSwipe"}))
+
+        return formatted
+
     def run(self):
         match self.store:
             # case "morele":
             #     self.morele()
             # case "mediaexpert":
             #     self.mediaexpert()
-            case "komputronik":
-                self.komputronik()
+            # case "komputronik":
+            #     self.komputronik()
+            case "sferis":
+                self.sferis()
 
 
 if __name__ == "__main__":
