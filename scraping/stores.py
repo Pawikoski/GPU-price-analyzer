@@ -53,7 +53,7 @@ class Store:
         def _format(products):
             for product in products:
                 name = product['data-product-name']
-                lhr = " lhr" in name
+                lhr = "lhr" in name.lower()
                 memory_gb = int([feature for feature in product.find_all("div", {"class": "cat-product-feature"}) if "ilość pamięci ram" in feature.text.lower()][0]['title'].lower().replace("gb", ""))
                 if not product.find("a", href=re.compile(fr"/basket/add/{product['data-product-id']}")):
                     price = None
@@ -101,6 +101,7 @@ class Store:
 
     def mediaexpert(self):
         formatted = []
+
         def _format(products):
             for product in products:
                 name_and_url = product.find_element(By.CLASS_NAME, 'spark-link')
