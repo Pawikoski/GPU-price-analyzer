@@ -353,6 +353,58 @@ class Store:
 
                 _format(soup.find("div", {"id": "listing-container"}).find_all(name="div", attrs={"width": True}))
 
+        return formatted
+
+    def euro(self):
+        formatted = []
+
+        def _format(products: list):
+            for product in products:
+                name_and_url = product.find("a", {"class": "js-save-keyword"})
+                name = name_and_url.text.strip()
+                if not product.find("button", {"class": "add-to-cart"}):
+                    available = False
+                    price = None
+                else:
+                    available = True
+                    price = float(product.find("div", {"class": "selenium-price-normal"}).text.strip().replace("zł", "")
+                                  .replace(" ", "").replace(",", ".").replace("\xa0", ""))
+                product_url = 'https://www.euro.com.pl' + name_and_url['href']
+                lhr = "lhr" in name.lower()
+                memory_gb = int(
+                    product.find("a", {"title": "Pamięć karty graficznej"}).parent.parent.find(
+                        "span", {"class": "attribute-value"}).text.lower().replace("gb", "")
+                )
+                brand = brand_detector(name)
+
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+
+        soup = BeautifulSoup(requests.get(self.url, headers=self.headers).text, 'lxml')
+        try:
+            pages = int(soup.findAll("a", {"class": "paging-number"})[-1].text)
+        except (ValueError, AttributeError, IndexError):
+            pages = 1
+        print(soup)
+        _format(soup.find_all("div", {"class": "product-row"}))
+
+        if pages > 1:
+            for page in range(2, pages + 1):
+                time.sleep(random.uniform(0.3, 7.0))
+                url = self.url.replace(".bhtml", f",strona-{page}.bhtml")
+
+                soup = BeautifulSoup(requests.get(url, headers=self.headers).text, 'lxml')
+                _format(soup.find_all("div", {"class": "product-row"}))
+
+        return formatted
+
     def run(self):
         match self.store:
             # case "morele":
@@ -363,8 +415,10 @@ class Store:
             #     self.komputronik()
             # case "sferis":
             #     self.sferis()
-            case "x-kom":
-                self.x_kom()
+            # case "x-kom":
+            #     self.x_kom()
+            case "rtv-euro-agd":
+                self.euro()
 
 
 if __name__ == "__main__":
