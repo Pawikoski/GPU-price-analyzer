@@ -392,7 +392,7 @@ class Store:
             pages = int(soup.findAll("a", {"class": "paging-number"})[-1].text)
         except (ValueError, AttributeError, IndexError):
             pages = 1
-        print(soup)
+
         _format(soup.find_all("div", {"class": "product-row"}))
 
         if pages > 1:
@@ -402,6 +402,49 @@ class Store:
 
                 soup = BeautifulSoup(requests.get(url, headers=self.headers).text, 'lxml')
                 _format(soup.find_all("div", {"class": "product-row"}))
+
+        return formatted
+
+    def proline(self):
+        formatted = []
+
+        def _format(products: list):
+            for product in products:
+                try:
+                    name_and_url = product.find("a", {"class": "produkt"})
+                    name = name_and_url.text
+                except AttributeError:
+                    continue
+                available = not product.find("img", {"alt": "Brak towaru"})
+                price = None
+                if available:
+                    price = float(product.find("td", {"class": "c"}).text.replace(",", "."))
+                product_url = "https://proline.pl" + name_and_url['href']
+                lhr = "lhr" in name.lower()
+                regex1 = re.findall(r"\d{1,2}\s*GB", name, flags=re.IGNORECASE)
+                regex2 = re.findall(r"\d{1,2}G", name, flags=re.IGNORECASE)
+                if len(regex1) > 0:
+                    memory_gb = int(regex1[0].lower().replace("gb", ""))
+                elif len(regex2) > 0:
+                    memory_gb = int(regex2[0].lower().replace("g", ""))
+                else:
+                    memory_gb = None
+                brand = brand_detector(name)
+
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+
+        response = requests.get(self.url, headers=self.headers, params={"elementsPerPage": "all"}, timeout=20)
+        soup = BeautifulSoup(response.text, 'lxml')
+
+        _format(soup.find("table", {"class": "cennik"}).find_all("tr"))
 
         return formatted
 
@@ -417,8 +460,10 @@ class Store:
             #     self.sferis()
             # case "x-kom":
             #     self.x_kom()
-            case "rtv-euro-agd":
-                self.euro()
+            # case "rtv-euro-agd":
+            #     self.euro()
+            case "proline":
+                self.proline()
 
 
 if __name__ == "__main__":
