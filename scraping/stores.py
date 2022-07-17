@@ -273,15 +273,6 @@ class Store:
                         memory_gb = None
                 brand = brand_detector(name)
 
-                print({
-                    "name": name,
-                    "availability": available,
-                    "price": price,
-                    "url": product_url,
-                    "lhr": lhr,
-                    "memory": memory_gb,
-                    "brand": brand
-                })
                 formatted.append({
                     "name": name,
                     "availability": available,
@@ -312,6 +303,56 @@ class Store:
 
         return formatted
 
+    def x_kom(self):
+        formatted = []
+
+        def _format(products: list):
+            for product in products:
+                name = product.find("h3", {"title": True}).text
+                if not product.find("button", {"title": "Dodaj do koszyka"}):
+                    available = False
+                    price = None
+                else:
+                    available = True
+                    # TODO: Catch exceptions for price
+                    price = product.findAll("span", string=re.compile(r"^[\d ]*,\d{1,2} zł"))[-1].text. \
+                        replace(" ", "").replace("zł", "").replace(",", ".")
+                product_url = "https://x-kom.pl" + product.find("a")['href']
+                lhr = "lhr" in name.lower()
+                memory_gb = int(product.find("li", text=re.compile(r"pamięć: \d{1,2}\s*gb", re.IGNORECASE)).text.split(":")[1].lower().replace("gb", ""))
+                brand = brand_detector(name)
+
+                formatted.append({
+                    "name": name,
+                    "availability": available,
+                    "price": price,
+                    "url": product_url,
+                    "lhr": lhr,
+                    "memory": memory_gb,
+                    "brand": brand
+                })
+
+        response = requests.get(self.url, headers=self.headers)
+        soup = BeautifulSoup(response.text, 'lxml')
+
+        try:
+            pagination = soup.find("input", {"type": "number", "value": "1"})
+
+            pages = int(pagination['max'])
+        except (TypeError, AttributeError, IndexError):
+            pages = 1
+
+        print(pages)
+
+        _format(soup.find("div", {"id": "listing-container"}).find_all(name="div", attrs={"width": True}))
+
+        if pages > 1:
+            for page in range(2, pages + 1):
+                time.sleep(random.uniform(0.4, 8.0))
+                soup = BeautifulSoup(requests.get(self.url, params={"page": page}, headers=self.headers).text, 'lxml')
+
+                _format(soup.find("div", {"id": "listing-container"}).find_all(name="div", attrs={"width": True}))
+
     def run(self):
         match self.store:
             # case "morele":
@@ -320,8 +361,10 @@ class Store:
             #     self.mediaexpert()
             # case "komputronik":
             #     self.komputronik()
-            case "sferis":
-                self.sferis()
+            # case "sferis":
+            #     self.sferis()
+            case "x-kom":
+                self.x_kom()
 
 
 if __name__ == "__main__":
