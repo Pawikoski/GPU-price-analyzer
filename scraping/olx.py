@@ -26,6 +26,8 @@ def olx_search(search_phrase: str) -> dict:
             continue
         # TODO: Check and compare information between arg dict and name
 
+    # TODO: return dict with gpu info and average price
+
 
 if __name__ == "__main__":
     olx_search("karta graficzna")
