@@ -2,24 +2,24 @@
   "amd radeon": {
     "rx 6900 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1731132",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6900-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=129646",
         "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B186916%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6900-xt.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6900+xt"
       }
     },
     "rx 6800 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1716762",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6800-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=129439",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:624881",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B184838%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6800-xt.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6800+xt"
       }
     },
     "rx 6700 xt": {
