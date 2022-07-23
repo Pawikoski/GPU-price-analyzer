@@ -22,66 +22,88 @@
         "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6800+xt"
       }
     },
-    "rx 6700 xt": {
+    "rx 6800": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1716752",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6800",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=129438",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:624877",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B184845%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6800.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6800"
       }
     },
     "rx 6750 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O2064060",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6750-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=138054",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:698442",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B246547%5D=1",
         "rtv-euro-agd": "",
         "proline": ""
       }
     },
+    "rx 6700 xt": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1777802",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6700-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=131122",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:643492",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B197037%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6700-xt.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6700+xt"
+      }
+    },
     "rx 6650 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O2064052",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6650-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=138053",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:698408",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B246533%5D=1",
         "rtv-euro-agd": "",
         "proline": ""
       }
     },
     "rx 6600 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1855310",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6600-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=133271",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:663092",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B214160%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6600-xt.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6600+xt"
+      }
+    },
+    "rx 6600": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1887631",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6600",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=134167",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:671139",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B221408%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6600.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+6600"
       }
     },
     "rx 6500 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1960657",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-6500-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=136123",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:683113",
+        "x-kom": "https://www.x-kom.pl/g-5/c/22-karty-graficzne-amd.html?f%5B1702%5D%5B230560%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!radeon-rx-6500-xt.bhtml",
         "proline": ""
       }
     },
     "rx 5700 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1609321",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-5700-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=108190",
         "sferis": "",
         "x-kom": "",
         "rtv-euro-agd": "",
@@ -90,59 +112,114 @@
     },
     "rx 5500 xt": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1653997",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_radeon-rx-5500-xt",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=111728",
         "sferis": "",
         "x-kom": "",
         "rtv-euro-agd": "",
-        "proline": ""
-      }
-    },
-    "rx 6800": {
-      "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
-      }
-    },
-    "rx 6600": {
-      "urls": {
-        "morele": "",
-        "mediaexpert": "",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rx+5500+xt"
       }
     }
   },
   "nvidia geforce": {
-    "rtx 3080": {
+    "rtx 3090 ti": {
       "urls": {
-        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1689340",
-        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/producent-chipsetu_nvidia/model_geforce-rtx-3080",
-        "komputronik": "https://www.komputronik.pl/search-filter/1099/geforce-rtx-3080",
-        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:615032",
-        "x-kom": "https://www.x-kom.pl/g-5/c/345-karty-graficzne.html?f%5B1702%5D%5B178106%5D=1",
-        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3080.bhtml",
-        "proline": "https://proline.pl/?kat=Karty+graficzne+PCI-E&c_chipset-model=rtx+3080"
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O2027819",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3090-ti",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=137299",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:692480",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B241524%5D=1",
+        "rtv-euro-agd": "",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3090ti"
       }
     },
     "rtx 3090": {
       "urls": {
-        "morele": "",
-        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/producent-chipsetu_nvidia/model_geforce-rtx-3090",
-        "komputronik": "",
-        "sferis": "",
-        "x-kom": "",
-        "rtv-euro-agd": "",
-        "proline": ""
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1689334",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3090",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=128317",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:615039",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B178114%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3090.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3090"
+      }
+    },
+    "rtx 3080 ti": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1827334",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3080-ti",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=132458",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:653958",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B204166%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3080-ti.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3080+ti"
+      }
+    },
+    "rtx 3080": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1689340",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3080",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=128316",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:615032",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B178106%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3080.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3080"
+      }
+    },
+    "rtx 3070 ti": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1827217",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3070-ti",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=132554",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:655095",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B204758%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3070-ti.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3070+ti"
+      }
+    },
+    "rtx 3070": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1689348",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3070",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=128821",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:619376",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B178141%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3070.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3070"
+      }
+    },
+    "rtx 3060 ti": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1728675",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3060-ti",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=129526",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:625096",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B186579%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3060-ti.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3060+ti"
+      }
+    },
+    "rtx 3060": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1760879",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3060",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=130691",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:635439",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B191561%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3060.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3060"
+      }
+    },
+    "rtx 3050": {
+      "urls": {
+        "morele": "https://www.morele.net/kategoria/karty-graficzne-12/,,,,,,,,0,,,,8143O1967000",
+        "mediaexpert": "https://www.mediaexpert.pl/komputery-i-tablety/podzespoly-komputerowe/karty-graficzne/model_geforce-rtx-3050",
+        "komputronik": "https://www.komputronik.pl/category/1099/karty-graficzne.html?a%5B507%5D%5B%5D=136314",
+        "sferis": "https://www.sferis.pl/karty-graficzne-2889?f=a807:685449",
+        "x-kom": "https://www.x-kom.pl/g-5/c/346-karty-graficzne-nvidia.html?f%5B1702%5D%5B231180%5D=1",
+        "rtv-euro-agd": "https://www.euro.com.pl/karty-graficzne,typ-chipsetu!geforce-rtx-3050.bhtml",
+        "proline": "https://proline.pl/?g=Karty+graficzne&c_chipset-model=rtx+3050"
       }
     }
   }
